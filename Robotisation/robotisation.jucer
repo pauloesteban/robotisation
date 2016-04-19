@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="AC7ScK" name="robotisation" projectType="audioplug" version="1.0.0"
+              bundleIdentifier="uk.ac.qmul.eecs.robotisation" buildVST="1"
+              buildRTAS="0" buildAU="1" pluginName="Robotisation" pluginDesc="Robotisation effect using phase vocoder"
+              pluginManufacturer="Reiss and McPherson" pluginManufacturerCode="JRAM"
+              pluginCode="pvrb" pluginChannelConfigs="{1, 1}, {2, 2}" pluginIsSynth="0"
+              pluginWantsMidiIn="0" pluginProducesMidiOut="0" pluginSilenceInIsSilenceOut="1"
+              pluginTailLength="0" pluginEditorRequiresKeys="0" pluginAUExportPrefix="robotisationAU"
+              pluginAUViewClass="pvoc_passthroughAU_V1" pluginRTASCategory=""
+              jucerVersion="3.1.0" companyName="Reiss and McPherson" aaxIdentifier="com.yourcompany.pvoc_passthrough"
+              pluginAAXCategory="AAX_ePlugInCategory_Dynamics" buildVST3="0"
+              buildAAX="0" includeBinaryInAppConfig="1">
+  <EXPORTFORMATS>
+    <VS2013 targetFolder="Builds/VisualStudio2013" vstFolder="C:\vstsdk2.4">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="robotisation"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="2" targetName="robotisation"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_opengl" path="C:\JUCE-WINDOWS\modules"/>
+        <MODULEPATH id="juce_gui_extra" path="C:\JUCE-WINDOWS\modules"/>
+        <MODULEPATH id="juce_gui_basics" path="C:\JUCE-WINDOWS\modules"/>
+        <MODULEPATH id="juce_graphics" path="C:\JUCE-WINDOWS\modules"/>
+        <MODULEPATH id="juce_events" path="C:\JUCE-WINDOWS\modules"/>
+        <MODULEPATH id="juce_data_structures" path="C:\JUCE-WINDOWS\modules"/>
+        <MODULEPATH id="juce_core" path="C:\JUCE-WINDOWS\modules"/>
+        <MODULEPATH id="juce_audio_utils" path="C:\JUCE-WINDOWS\modules"/>
+        <MODULEPATH id="juce_audio_processors" path="C:\JUCE-WINDOWS\modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="C:\JUCE-WINDOWS\modules"/>
+        <MODULEPATH id="juce_audio_formats" path="C:\JUCE-WINDOWS\modules"/>
+        <MODULEPATH id="juce_audio_devices" path="C:\JUCE-WINDOWS\modules"/>
+        <MODULEPATH id="juce_audio_basics" path="C:\JUCE-WINDOWS\modules"/>
+      </MODULEPATHS>
+    </VS2013>
+  </EXPORTFORMATS>
+  <MAINGROUP id="oVUVUz" name="robotisation">
+    <GROUP id="{F4483B04-0E7A-D77C-795E-A491F61E239B}" name="Source">
+      <FILE id="d7EIMU" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="YDAD0P" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="VTO1E6" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="mhOgcd" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_QUICKTIME="disabled"/>
+</JUCERPROJECT>
