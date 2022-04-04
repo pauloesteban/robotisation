@@ -8,33 +8,52 @@
               pluginWantsMidiIn="0" pluginProducesMidiOut="0" pluginSilenceInIsSilenceOut="1"
               pluginTailLength="0" pluginEditorRequiresKeys="0" pluginAUExportPrefix="robotisationAU"
               pluginAUViewClass="pvoc_passthroughAU_V1" pluginRTASCategory=""
-              jucerVersion="3.1.0" companyName="Reiss and McPherson" aaxIdentifier="com.yourcompany.pvoc_passthrough"
-              pluginAAXCategory="AAX_ePlugInCategory_Dynamics" buildVST3="0"
-              buildAAX="0" includeBinaryInAppConfig="1">
+              companyName="Reiss and McPherson" aaxIdentifier="com.yourcompany.pvoc_passthrough"
+              pluginAAXCategory="2" buildVST3="0" buildAAX="0" includeBinaryInAppConfig="1"
+              pluginFormats="buildVST,buildAU" displaySplashScreen="1" jucerFormatVersion="1">
   <EXPORTFORMATS>
-    <VS2013 targetFolder="Builds/VisualStudio2013" vstFolder="C:\vstsdk2.4">
+    <XCODE_MAC targetFolder="Builds/MacOSX">
       <CONFIGURATIONS>
-        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
-                       isDebug="1" optimisation="1" targetName="robotisation"/>
-        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
-                       isDebug="0" optimisation="2" targetName="robotisation"/>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_opengl" path="C:\JUCE-WINDOWS\modules"/>
-        <MODULEPATH id="juce_gui_extra" path="C:\JUCE-WINDOWS\modules"/>
-        <MODULEPATH id="juce_gui_basics" path="C:\JUCE-WINDOWS\modules"/>
-        <MODULEPATH id="juce_graphics" path="C:\JUCE-WINDOWS\modules"/>
-        <MODULEPATH id="juce_events" path="C:\JUCE-WINDOWS\modules"/>
-        <MODULEPATH id="juce_data_structures" path="C:\JUCE-WINDOWS\modules"/>
-        <MODULEPATH id="juce_core" path="C:\JUCE-WINDOWS\modules"/>
-        <MODULEPATH id="juce_audio_utils" path="C:\JUCE-WINDOWS\modules"/>
-        <MODULEPATH id="juce_audio_processors" path="C:\JUCE-WINDOWS\modules"/>
-        <MODULEPATH id="juce_audio_plugin_client" path="C:\JUCE-WINDOWS\modules"/>
-        <MODULEPATH id="juce_audio_formats" path="C:\JUCE-WINDOWS\modules"/>
-        <MODULEPATH id="juce_audio_devices" path="C:\JUCE-WINDOWS\modules"/>
-        <MODULEPATH id="juce_audio_basics" path="C:\JUCE-WINDOWS\modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../../juce"/>
+        <MODULEPATH id="juce_audio_devices" path="../../juce"/>
+        <MODULEPATH id="juce_audio_formats" path="../../juce"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../juce"/>
+        <MODULEPATH id="juce_audio_processors" path="../../juce"/>
+        <MODULEPATH id="juce_audio_utils" path="../../juce"/>
+        <MODULEPATH id="juce_core" path="../../juce"/>
+        <MODULEPATH id="juce_data_structures" path="../../juce"/>
+        <MODULEPATH id="juce_events" path="../../juce"/>
+        <MODULEPATH id="juce_graphics" path="../../juce"/>
+        <MODULEPATH id="juce_gui_basics" path="../../juce"/>
+        <MODULEPATH id="juce_gui_extra" path="../../juce"/>
+        <MODULEPATH id="juce_opengl" path="../../juce"/>
       </MODULEPATHS>
-    </VS2013>
+    </XCODE_MAC>
+    <VS2022 targetFolder="Builds/VisualStudio2022">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../juce"/>
+        <MODULEPATH id="juce_audio_devices" path="../../juce"/>
+        <MODULEPATH id="juce_audio_formats" path="../../juce"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../juce"/>
+        <MODULEPATH id="juce_audio_processors" path="../../juce"/>
+        <MODULEPATH id="juce_audio_utils" path="../../juce"/>
+        <MODULEPATH id="juce_core" path="../../juce"/>
+        <MODULEPATH id="juce_data_structures" path="../../juce"/>
+        <MODULEPATH id="juce_events" path="../../juce"/>
+        <MODULEPATH id="juce_graphics" path="../../juce"/>
+        <MODULEPATH id="juce_gui_basics" path="../../juce"/>
+        <MODULEPATH id="juce_gui_extra" path="../../juce"/>
+        <MODULEPATH id="juce_opengl" path="../../juce"/>
+      </MODULEPATHS>
+    </VS2022>
   </EXPORTFORMATS>
   <MAINGROUP id="oVUVUz" name="robotisation">
     <GROUP id="{F4483B04-0E7A-D77C-795E-A491F61E239B}" name="Source">
