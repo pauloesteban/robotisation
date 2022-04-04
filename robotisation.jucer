@@ -9,8 +9,9 @@
               pluginTailLength="0" pluginEditorRequiresKeys="0" pluginAUExportPrefix="robotisationAU"
               pluginAUViewClass="pvoc_passthroughAU_V1" pluginRTASCategory=""
               companyName="Reiss and McPherson" aaxIdentifier="com.yourcompany.pvoc_passthrough"
-              pluginAAXCategory="2" buildVST3="0" buildAAX="0" includeBinaryInAppConfig="1"
-              pluginFormats="buildVST,buildAU" displaySplashScreen="1" jucerFormatVersion="1">
+              pluginAAXCategory="2" buildVST3="1" buildAAX="0" includeBinaryInAppConfig="1"
+              pluginFormats="buildAU,buildVST,buildVST3" displaySplashScreen="1"
+              jucerFormatVersion="1" buildAUv3="0" buildStandalone="0" enableIAA="0">
   <EXPORTFORMATS>
     <XCODE_MAC targetFolder="Builds/MacOSX">
       <CONFIGURATIONS>

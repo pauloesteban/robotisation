@@ -7,6 +7,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "robotisation - VST", "robot
 		{E4651B8D-925B-F0F1-87A5-B1831623C1F5} = {E4651B8D-925B-F0F1-87A5-B1831623C1F5}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "robotisation - VST3", "robotisation_VST3.vcxproj", "{09D1547E-CABD-671F-BD03-21F7E7B64C99}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E4651B8D-925B-F0F1-87A5-B1831623C1F5} = {E4651B8D-925B-F0F1-87A5-B1831623C1F5}
+	EndProjectSection
+EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "robotisation - Shared Code", "robotisation_SharedCode.vcxproj", "{E4651B8D-925B-F0F1-87A5-B1831623C1F5}"
 EndProject
 Global
@@ -19,6 +24,10 @@ Global
 		{A7116891-BD38-971B-8671-0570B5BD1A71}.Debug|x64.Build.0 = Debug|x64
 		{A7116891-BD38-971B-8671-0570B5BD1A71}.Release|x64.ActiveCfg = Release|x64
 		{A7116891-BD38-971B-8671-0570B5BD1A71}.Release|x64.Build.0 = Release|x64
+		{09D1547E-CABD-671F-BD03-21F7E7B64C99}.Debug|x64.ActiveCfg = Debug|x64
+		{09D1547E-CABD-671F-BD03-21F7E7B64C99}.Debug|x64.Build.0 = Debug|x64
+		{09D1547E-CABD-671F-BD03-21F7E7B64C99}.Release|x64.ActiveCfg = Release|x64
+		{09D1547E-CABD-671F-BD03-21F7E7B64C99}.Release|x64.Build.0 = Release|x64
 		{E4651B8D-925B-F0F1-87A5-B1831623C1F5}.Debug|x64.ActiveCfg = Debug|x64
 		{E4651B8D-925B-F0F1-87A5-B1831623C1F5}.Debug|x64.Build.0 = Debug|x64
 		{E4651B8D-925B-F0F1-87A5-B1831623C1F5}.Release|x64.ActiveCfg = Release|x64
