@@ -13,9 +13,6 @@
  
   Code by Andrew McPherson, Brecht De Man and Joshua Reiss
  
-  This code requires the fftw library version 3 to compile:
-  http://fftw.org
- 
   ---
 
   This program is free software: you can redistribute it and/or modify
@@ -150,7 +147,7 @@ const String RobotisationAudioProcessor::getParameterName (int index)
         default:               break;
     }
     
-    return String::empty;
+    return String();
 }
 
 const String RobotisationAudioProcessor::getParameterText (int index)
@@ -226,7 +223,7 @@ void RobotisationAudioProcessor::setCurrentProgram (int index)
 
 const String RobotisationAudioProcessor::getProgramName (int index)
 {
-    return String::empty;
+    return String();
 }
 
 void RobotisationAudioProcessor::changeProgramName (int index, const String& newName)

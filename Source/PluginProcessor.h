@@ -11,9 +11,6 @@
  
   Code by Andrew McPherson, Brecht De Man and Joshua Reiss
  
-  This code requires the fftw library version 3 to compile:
-  http://fftw.org
- 
   ---
 
   This program is free software: you can redistribute it and/or modify
@@ -34,60 +31,59 @@
 #define __PLUGINPROCESSOR_H_4693CB6E__
 
 #define _USE_MATH_DEFINES
-#include "../JuceLibraryCode/JuceHeader.h"
-#include <fftw3.h>
+#include <JuceHeader.h>
 
 //==============================================================================
 /**
 */
-class RobotisationAudioProcessor  : public AudioProcessor
+class RobotisationAudioProcessor  : public juce::AudioProcessor
 {
 public:
     //==============================================================================
     RobotisationAudioProcessor();
-    ~RobotisationAudioProcessor();
+    ~RobotisationAudioProcessor() override;
 
     //==============================================================================
-    void prepareToPlay (double sampleRate, int samplesPerBlock);
-    void releaseResources();
+    void prepareToPlay (double sampleRate, int samplesPerBlock) override;
+    void releaseResources() override;
 
-    void processBlock (AudioSampleBuffer& buffer, MidiBuffer& midiMessages);
-
-    //==============================================================================
-    AudioProcessorEditor* createEditor();
-    bool hasEditor() const;
+    void processBlock (AudioSampleBuffer& buffer, MidiBuffer& midiMessages) override;
 
     //==============================================================================
-    const String getName() const;
-
-    int getNumParameters();
-
-    float getParameter (int index);
-    void setParameter (int index, float newValue);
-
-    const String getParameterName (int index);
-    const String getParameterText (int index);
-
-    const String getInputChannelName (int channelIndex) const;
-    const String getOutputChannelName (int channelIndex) const;
-    bool isInputChannelStereoPair (int index) const;
-    bool isOutputChannelStereoPair (int index) const;
-
-    bool silenceInProducesSilenceOut() const;
-    double getTailLengthSeconds() const;    
-    bool acceptsMidi() const;
-    bool producesMidi() const;
+    AudioProcessorEditor* createEditor() override;
+    bool hasEditor() const override;
 
     //==============================================================================
-    int getNumPrograms();
-    int getCurrentProgram();
-    void setCurrentProgram (int index);
-    const String getProgramName (int index);
-    void changeProgramName (int index, const String& newName);
+    const String getName() const override;
+
+    int getNumParameters() override;
+
+    float getParameter (int index) override;
+    void setParameter (int index, float newValue) override;
+
+    const String getParameterName (int index) override;
+    const String getParameterText (int index) override;
+
+    const String getInputChannelName (int channelIndex) const override;
+    const String getOutputChannelName (int channelIndex) const override;
+    bool isInputChannelStereoPair (int index) const override;
+    bool isOutputChannelStereoPair (int index) const override;
+
+    bool silenceInProducesSilenceOut() const override;
+    double getTailLengthSeconds() const override;
+    bool acceptsMidi() const override;
+    bool producesMidi() const override;
 
     //==============================================================================
-    void getStateInformation (MemoryBlock& destData);
-    void setStateInformation (const void* data, int sizeInBytes);
+    int getNumPrograms() override;
+    int getCurrentProgram() override;
+    void setCurrentProgram (int index) override;
+    const String getProgramName (int index) override;
+    void changeProgramName (int index, const String& newName) override;
+
+    //==============================================================================
+    void getStateInformation (MemoryBlock& destData) override;
+    void setStateInformation (const void* data, int sizeInBytes) override;
     
     //==============================================================================
     
@@ -140,8 +136,8 @@ private:
     
     // Variables for calculating the FFT and IFFT: complex data structures and the
     // "plan" used by the fftw library to calculate the transforms.
-    fftw_complex *fftTimeDomain_, *fftFrequencyDomain_;
-    fftw_plan fftForwardPlan_, fftBackwardPlan_;
+//    fftw_complex *fftTimeDomain_, *fftFrequencyDomain_;
+//    fftw_plan fftForwardPlan_, fftBackwardPlan_;
     
     // Size of the FFT (generally a power of two) and the hop size (in samples, generally a fraction of FFT size)
     int fftActualTransformSize_;

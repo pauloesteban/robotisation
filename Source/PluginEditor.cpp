@@ -11,9 +11,6 @@
  
   Code by Andrew McPherson, Brecht De Man and Joshua Reiss
  
-  This code requires the fftw library version 3 to compile:
-  http://fftw.org
- 
   ---
 
   This program is free software: you can redistribute it and/or modify
@@ -35,11 +32,13 @@
 
 
 //==============================================================================
-RobotisationAudioProcessorEditor::RobotisationAudioProcessorEditor (RobotisationAudioProcessor* ownerFilter)
-    : AudioProcessorEditor (ownerFilter),
+RobotisationAudioProcessorEditor::RobotisationAudioProcessorEditor (RobotisationAudioProcessor& ownerFilter)
+    : AudioProcessorEditor (&ownerFilter),
+      audioProcessor (ownerFilter),
       fftSizeLabel_("", "FFT Size:"),
       hopSizeLabel_("", "Hop Size:"),
-      windowTypeLabel_("", "Window Type:")
+      windowTypeLabel_("", "Window Type:"),
+      resizer_ (std::make_unique <ResizableCornerComponent> (this, &resizeLimits_))
 {
     // This is where our plugin's editor size is set.
     // setSize(170, 80);
@@ -89,12 +88,12 @@ RobotisationAudioProcessorEditor::RobotisationAudioProcessorEditor (Robotisation
 	fftFilterTextButton_.setClickingTogglesState(true);
     
     // add the triangular resizer component for the bottom-right of the UI
-    addAndMakeVisible(resizer_ = new ResizableCornerComponent (this, &resizeLimits_));
+    addAndMakeVisible (*resizer_);
     resizeLimits_.setSizeLimits(370, 120, 400, 160);
     
     // set our component's initial size to be the last one that was stored in the filter's settings
-    setSize(ownerFilter->lastUIWidth_,
-            ownerFilter->lastUIHeight_);
+    setSize(ownerFilter.lastUIWidth_,
+            ownerFilter.lastUIHeight_);
     
     startTimer(50);
 }

@@ -11,9 +11,6 @@
  
   Code by Andrew McPherson, Brecht De Man and Joshua Reiss
  
-  This code requires the fftw library version 3 to compile:
-  http://fftw.org
- 
   ---
 
   This program is free software: you can redistribute it and/or modify
@@ -29,36 +26,39 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+#pragma once
 
 #ifndef __PLUGINEDITOR_H_6E48F605__
 #define __PLUGINEDITOR_H_6E48F605__
 
-#include "../JuceLibraryCode/JuceHeader.h"
+#include <JuceHeader.h>
 #include "PluginProcessor.h"
 
 
 //==============================================================================
 
-class RobotisationAudioProcessorEditor  : public AudioProcessorEditor,
-                                   public SliderListener,
-                                   public ComboBox::Listener,
-								   public ButtonListener,
-                                   public Timer
+class RobotisationAudioProcessorEditor  : public juce::AudioProcessorEditor,
+public juce::Slider::Listener,
+public juce::ComboBox::Listener,
+public juce::Button::Listener,
+public juce::Timer
 {
 public:
-    RobotisationAudioProcessorEditor (RobotisationAudioProcessor* ownerFilter);
-    ~RobotisationAudioProcessorEditor();
+    RobotisationAudioProcessorEditor (RobotisationAudioProcessor& ownerFilter);
+    ~RobotisationAudioProcessorEditor() override;
 
     //==============================================================================
     // This is just a standard Juce paint method...
-    void timerCallback();
-    void paint (Graphics& g);
-    void resized();
-    void sliderValueChanged (Slider*);
-    void comboBoxChanged (ComboBox *);
-	void buttonClicked(Button *); //Paulo: function for TextButton
+    void timerCallback() override;
+    void paint (Graphics& g) override;
+    void resized() override;
+    void sliderValueChanged (Slider*) override;
+    void comboBoxChanged (ComboBox *) override;
+	void buttonClicked(Button *) override;
     
 private:
+    RobotisationAudioProcessor& audioProcessor;
+    
     Label fftSizeLabel_, hopSizeLabel_, windowTypeLabel_;
     ComboBox fftSizeComboBox_, windowTypeComboBox_;
     Slider hopSizeSlider_;
@@ -66,13 +66,15 @@ private:
 	Label studentName_;
 	TextButton fftFilterTextButton_;
     
-    ScopedPointer<ResizableCornerComponent> resizer_;
     ComponentBoundsConstrainer resizeLimits_;
+    std::unique_ptr<ResizableCornerComponent> resizer_;
     
     RobotisationAudioProcessor* getProcessor() const
     {
         return static_cast <RobotisationAudioProcessor*> (getAudioProcessor());
     }
+    
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (RobotisationAudioProcessorEditor)
 };
 
 
